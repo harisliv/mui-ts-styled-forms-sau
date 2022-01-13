@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { createTheme, ThemeProvider } from "@mui/material";
+import * as React from "react";
+import BasicGrid from "./components/BasicGrid";
+import MaterialForm from "./components/MaterialForm";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#DE1515",
+    },
+  },
+  typography: {
+    fontFamily: "Inter",
+    fontWeightLight: 400,
+    fontWeightRegular: 700,
+    fontWeightMedium: 900,
+  },
+  spacing: 18,
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <BasicGrid>
+        <MaterialForm />
+      </BasicGrid>
+    </ThemeProvider>
   );
 }
 
