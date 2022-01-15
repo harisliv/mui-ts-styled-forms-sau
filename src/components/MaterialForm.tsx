@@ -54,7 +54,7 @@ const StyledTextField = styled(TextField)`
 `;
 
 const StyledButton = styled(Button)`
-  && {
+   &{
     text-transform: none;
     border-radius: 8px;
     box-shadow: none;
